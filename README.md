@@ -31,7 +31,7 @@ System.out.println(visitor.visit(ctx));
 
 ## API Endpoints Generation
 
-After running the spring boot application, each target can be accessed through the `/obfuscate/{target}` api url path, where `{target}` can be any of the following: c, cpp, csharp, java, javascript, python, masm64, bash, powershell.
+After running the spring boot application, each target can be accessed through the `/obfuscate/{target}` api url path, where `{target}` can be any of the following: c, cpp, csharp, java, javascript, python, masm64, bash, powershell. The Swagger UI can also be accessed using this URL `<host>:1337/swagger-ui/index.html`.
 Each endpoint takes two optional parameters to specify the range `[minOps, maxOps]`, that the polymorphic engine will use to generate transformations.
 
 ## C & C++ Target Example
