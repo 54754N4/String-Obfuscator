@@ -1,0 +1,953 @@
+{
+	"info": {
+		"_postman_id": "fcb31d9e-08ec-4219-9f19-7bd11846fdb4",
+		"name": "String Obfuscator definition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4110057"
+	},
+	"item": [
+		{
+			"name": "obfuscate",
+			"item": [
+				{
+					"name": "Obfuscates text in Python",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/obfuscate/python?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obfuscate",
+								"python"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "dolor adipisicing ex nisi",
+									"description": "(Required) "
+								},
+								{
+									"key": "minOps",
+									"value": "5"
+								},
+								{
+									"key": "maxOps",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:1337/obfuscate/python?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1337",
+									"path": [
+										"obfuscate",
+										"python"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "dolor adipisicing ex nisi",
+											"description": "(Required) "
+										},
+										{
+											"key": "minOps",
+											"value": "5"
+										},
+										{
+											"key": "maxOps",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "537"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Jul 2022 16:26:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "string = [0x72c7,0xb2c5,0x72c5,0xb2c5,0xf2c2,0x72d6,0x32c6,0x72c7,0x32c4,0x72c2,0x32c4,0xb2c2,0x32c4,0xb2c6,0x32c4,0xf2c5,0xb2c7,0x72d6,0x32c7,0x72c0,0x72d6,0xf2c5,0x32c4,0xb2c2,0x32c4]\nfor AeaNmAQ in range(len(string)):\n\tsClygEF = string[AeaNmAQ]\n\tsClygEF ^= 0xed6d\n\tsClygEF ^= 0x604c\n\tsClygEF = ~sClygEF & 0xffff\n\tsClygEF = (((sClygEF & 0xffff) << 0xb) | (sClygEF >> 0x5)) & 0xffff\n\tsClygEF = (((sClygEF & 0xffff) << 0x7) | (sClygEF >> 0x9)) & 0xffff\n\tstring[AeaNmAQ] = chr(sClygEF & 0xffff)\ndel AeaNmAQ, sClygEF\nprint(''.join(string))"
+						}
+					]
+				},
+				{
+					"name": "Obfuscates text in PowerShell",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/obfuscate/powershell?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obfuscate",
+								"powershell"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "dolor adipisicing ex nisi",
+									"description": "(Required) "
+								},
+								{
+									"key": "minOps",
+									"value": "5"
+								},
+								{
+									"key": "maxOps",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:1337/obfuscate/powershell?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1337",
+									"path": [
+										"obfuscate",
+										"powershell"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "dolor adipisicing ex nisi",
+											"description": "(Required) "
+										},
+										{
+											"key": "minOps",
+											"value": "5"
+										},
+										{
+											"key": "maxOps",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "860"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Jul 2022 16:28:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[uint64[]]$_nJnYiJW = 0x548f,0xa48e,0xd48e,0xa48e,0x748e,0x9493,0x848f,0x548f,0x48f,0x948e,0x48f,0x648e,0x48f,0x648f,0x48f,0xb48e,0x248f,0x9493,0x448f,0x148e,0x9493,0xb48e,0x48f,0x648e,0x48f\n$string = [System.Text.StringBuilder]::new()\nfor ($sPmCWnnqQ = 0; $sPmCWnnqQ -lt $_nJnYiJW.Length; $sPmCWnnqQ++) {\n\t$N_ApoKOK = $_nJnYiJW[$sPmCWnnqQ]\n\t$N_ApoKOK = ((($N_ApoKOK -band 0xffff) -shr 0x8) -bor ($N_ApoKOK -shl 0x8)) -band 0xffff\n\t$N_ApoKOK = -bnot $N_ApoKOK -band 0xffff\n\t$N_ApoKOK -= 0x1da9\n\t$N_ApoKOK = ((($N_ApoKOK -band 0xffff) -shl 0xc) -bor ($N_ApoKOK -shr 0x4)) -band 0xffff\n\t$N_ApoKOK -= 0x24cc\n\t$N_ApoKOK = -bnot $N_ApoKOK -band 0xffff\n\t$N_ApoKOK = -bnot $N_ApoKOK -band 0xffff\n\t[void]$string.Append([char]($N_ApoKOK -band 0xffff))\n}\n$N_ApoKOK = [void]$N_ApoKOK\n$sPmCWnnqQ = [void]$sPmCWnnqQ\n$_nJnYiJW = [void]$_nJnYiJW\nWrite-Host $string.ToString()"
+						}
+					]
+				},
+				{
+					"name": "Obfuscates text in MASM 64 bit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/obfuscate/masm64?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obfuscate",
+								"masm64"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "dolor adipisicing ex nisi",
+									"description": "(Required) "
+								},
+								{
+									"key": "minOps",
+									"value": "5"
+								},
+								{
+									"key": "maxOps",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/obfuscate/masm64?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"obfuscate",
+										"masm64"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "dolor adipisicing ex nisi",
+											"description": "(Required) "
+										},
+										{
+											"key": "minOps",
+											"value": "5"
+										},
+										{
+											"key": "maxOps",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1160"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Jul 2022 16:28:51 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "extern GetStdHandle: proc\nextern WriteFile: proc\nextern GetFileType: proc\nextern WriteConsoleW: proc\n\n.data?\n\tstdout\tdq ?\n\twritten\tdq ?\n.data\n\tstring dw 0b5b0h,0b5dah,0b5c0h,0b5dah,0b5d4h,0b438h,0b5b6h,0b5b0h,0b5c6h,0b5d8h,0b5c6h,0b5d2h,0b5c6h,0b5b2h,0b5c6h,0b5dch,0b5cah,0b438h,0b5ceh,0b5e8h,0b438h,0b5dch,0b5c6h,0b5d2h,0b5c6h\n\tlen\tequ $-string\n.code\nmain proc\n\tpush\trbp\n\tmov\trbp, rsp\n\tsub\trsp, 32\n\tand\trsp, -10h\n\n\tmov\trbx, offset string\n\txor\trcx, rcx\nKTDW:\n\txor\trax, rax\n\txor\trdx, rdx\n\txor\tr8, r8\n\txor\tr9, r9\n\txor\tr10, r10\n\tmov\tdx, word ptr [rbx + rcx*2]\n\tror\tdx, 6\n\tror\tdx, 4\n\tror\tdx, 7\n\tnot\tdx\n\txor\tdx, 57784\n\tadd\tdx, 7106\n\tsub\tdx, 13866\n\tsub\tdx, 10707\n\tmov\tword ptr [rbx + rcx*2], dx\n\tinc\tcx\n\tcmp\tcx, 25\n\tjne\tKTDW\n\n\t; Printing code\n\txor\trax, rax\n\txor\trcx, rcx\n\txor\trdx, rdx\n\txor\tr8, r8\n\txor\tr9, r9\n\tmov\trcx, -11\n\tcall\tGetStdHandle\n\tmov\t[stdout], rax\n\tmov\trcx, rax\n\tcall\tGetFileType\n\tcmp\trax, 1\n\tje\tfileWrite\n\tmov\trcx, [stdout]\n\tmov\trdx, rbx\n\tmov\tr8, len\n\tmov\tr9, written\n\tcall\tWriteConsoleW\n\tjmp\tepilog\nfileWrite:\n\tmov\trcx, [stdout]\n\tmov\trdx, rbx\n\tmov\tr8, len\n\tmov\tr9, written\n\tcall\tWriteFile\nepilog:\n\tadd\trsp, 32\n\tmov\trsp, rbp\n\tpop\trbp\n\tret\nmain endp\nend"
+						}
+					]
+				},
+				{
+					"name": "Obfuscates text in JS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/obfuscate/javascript?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obfuscate",
+								"javascript"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "dolor adipisicing ex nisi",
+									"description": "(Required) "
+								},
+								{
+									"key": "minOps",
+									"value": "5"
+								},
+								{
+									"key": "maxOps",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/obfuscate/javascript?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"obfuscate",
+										"javascript"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "dolor adipisicing ex nisi",
+											"description": "(Required) "
+										},
+										{
+											"key": "minOps",
+											"value": "5"
+										},
+										{
+											"key": "maxOps",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "690"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Jul 2022 16:28:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "var string = [0x43ea,0x23e9,0x43e9,0x23e9,0x83e7,0xc3f1,0xe3e9,0x43ea,0xe3e8,0xc3e7,0xe3e8,0xa3e7,0xe3e8,0xa3e9,0xe3e8,0x3e9,0x23ea,0xc3f1,0x63ea,0xc3e6,0xc3f1,0x3e9,0xe3e8,0xa3e7,0xe3e8];\nfor (var iwoYTOei=0, G_vSBlQsEh; iwoYTOei < string.length; iwoYTOei++) {\n\tG_vSBlQsEh = string[iwoYTOei];\n\tG_vSBlQsEh = ~G_vSBlQsEh & 0xffff;\n\tG_vSBlQsEh = (((G_vSBlQsEh & 0xffff) >> 0x5) | (G_vSBlQsEh << 0xb)) & 0xffff;\n\tG_vSBlQsEh = (((G_vSBlQsEh & 0xffff) << 0x8) | (G_vSBlQsEh >> 0x8)) & 0xffff;\n\tG_vSBlQsEh -= 0x154c;\n\tG_vSBlQsEh ^= 0x9b07;\n\tG_vSBlQsEh = ~G_vSBlQsEh & 0xffff;\n\tG_vSBlQsEh ^= 0xaffd;\n\tstring[iwoYTOei] = G_vSBlQsEh;\n}\nstring = String.fromCodePoint(...string);\nconsole.log(string);\n"
+						}
+					]
+				},
+				{
+					"name": "Obfuscates text in Java",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/obfuscate/java?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obfuscate",
+								"java"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "dolor adipisicing ex nisi",
+									"description": "(Required) "
+								},
+								{
+									"key": "minOps",
+									"value": "5"
+								},
+								{
+									"key": "maxOps",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/obfuscate/java?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"obfuscate",
+										"java"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "dolor adipisicing ex nisi",
+											"description": "(Required) "
+										},
+										{
+											"key": "minOps",
+											"value": "5"
+										},
+										{
+											"key": "maxOps",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "629"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Jul 2022 16:29:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "StringBuilder string = new StringBuilder(\"\\u69f8\\ue9f2\\u69f4\\ue9f2\\u69e9\\u6a12\\ue9f1\\u69f8\\ue9dd\\u69ea\\ue9dd\\ue9e8\\ue9dd\\ue9f0\\ue9dd\\u69f3\\ue9f6\\u6a12\\ue9f7\\u69f6\\u6a12\\u69f3\\ue9dd\\ue9e8\\ue9dd\");\nfor (int ELfijgJVD=0, hyjYlr_eE; ELfijgJVD < string.length(); ELfijgJVD++) {\n\thyjYlr_eE = string.charAt(ELfijgJVD);\n\thyjYlr_eE = ~hyjYlr_eE & 0xffff;\n\thyjYlr_eE += 0x30ee;\n\thyjYlr_eE = (((hyjYlr_eE & 0xffff) << 0x1) | (hyjYlr_eE >> 0xf)) & 0xffff;\n\thyjYlr_eE += 0x3825;\n\thyjYlr_eE -= 0x750;\n\thyjYlr_eE ^= 0x516;\n\thyjYlr_eE += 0x2a9c;\n\thyjYlr_eE ^= 0xe616;\n\tstring.setCharAt(ELfijgJVD, (char) hyjYlr_eE);\n}\nSystem.out.println(string);"
+						}
+					]
+				},
+				{
+					"name": "Obfuscates text in C#",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/obfuscate/csharp?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obfuscate",
+								"csharp"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "dolor adipisicing ex nisi",
+									"description": "(Required) "
+								},
+								{
+									"key": "minOps",
+									"value": "5"
+								},
+								{
+									"key": "maxOps",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/obfuscate/csharp?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"obfuscate",
+										"csharp"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "dolor adipisicing ex nisi",
+											"description": "(Required) "
+										},
+										{
+											"key": "minOps",
+											"value": "5"
+										},
+										{
+											"key": "maxOps",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "577"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Jul 2022 16:29:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "var str = new System.Text.StringBuilder(\"\\u21be\\u21c9\\u21c6\\u21c9\\u21cc\\u217a\\u21bb\\u21be\\u21c3\\u21ca\\u21c3\\u21cd\\u21c3\\u21bd\\u21c3\\u21c8\\u21c1\\u217a\\u21bf\\u21d2\\u217a\\u21c8\\u21c3\\u21cd\\u21c3\");\nfor (int iWiBdYyo_=0, VTFPxA, nmuIaZG_kb; iWiBdYyo_ < str.Length; iWiBdYyo_++) {\n\tVTFPxA = str[iWiBdYyo_];\n\tVTFPxA = ~VTFPxA & 0xffff;\n\tVTFPxA = ~VTFPxA & 0xffff;\n\tVTFPxA += 0xdba;\n\tnmuIaZG_kb = ((VTFPxA >> 0x8) ^ (VTFPxA >> 0xa)) & ((1 << 0x2) - 1);\n\tVTFPxA ^= (nmuIaZG_kb << 0x8) | (nmuIaZG_kb << 0xa);\n\tVTFPxA -= 0x2f14;\n\tstr[iWiBdYyo_] = (char) VTFPxA;\n}\nConsole.WriteLine(str);"
+						}
+					]
+				},
+				{
+					"name": "Obfuscates text in C++",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/obfuscate/cpp?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obfuscate",
+								"cpp"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "dolor adipisicing ex nisi",
+									"description": "(Required) "
+								},
+								{
+									"key": "minOps",
+									"value": "5"
+								},
+								{
+									"key": "maxOps",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/obfuscate/cpp?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"obfuscate",
+										"cpp"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "dolor adipisicing ex nisi",
+											"description": "(Required) "
+										},
+										{
+											"key": "minOps",
+											"value": "5"
+										},
+										{
+											"key": "maxOps",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "549"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Jul 2022 16:29:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "wchar_t string[25] = {0x4006,0xf006,0xc006,0xf006,0x2007,0x2,0x1006,0x4006,0x9006,0x7,0x9006,0x3007,0x9006,0x3006,0x9006,0xe006,0x7006,0x2,0x5006,0x8007,0x2,0xe006,0x9006,0x3007,0x9006};\nfor (unsigned int OPXi=0, waKxk; OPXi < 25; OPXi++) {\n\twaKxk = string[OPXi];\n\twaKxk = ~waKxk & 0xffff;\n\twaKxk = (((waKxk & 0xffff) << 0xb) | (waKxk >> 0x5)) & 0xffff;\n\twaKxk = ~waKxk & 0xffff;\n\twaKxk = (((waKxk & 0xffff) << 0x3) | (waKxk >> 0xd)) & 0xffff;\n\twaKxk = (((waKxk & 0xffff) << 0x6) | (waKxk >> 0xa)) & 0xffff;\n\tstring[OPXi] = waKxk;\n}\nwprintf(string);"
+						}
+					]
+				},
+				{
+					"name": "Obfuscates text in C",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/obfuscate/c?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obfuscate",
+								"c"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "dolor adipisicing ex nisi",
+									"description": "(Required) "
+								},
+								{
+									"key": "minOps",
+									"value": "5"
+								},
+								{
+									"key": "maxOps",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/obfuscate/c?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"obfuscate",
+										"c"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "dolor adipisicing ex nisi",
+											"description": "(Required) "
+										},
+										{
+											"key": "minOps",
+											"value": "5"
+										},
+										{
+											"key": "maxOps",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "606"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Jul 2022 16:29:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "wchar_t string[25] = {0x6d12,0x7812,0x7512,0x7812,0x7b12,0x2912,0x6a12,0x6d12,0x7212,0x7912,0x7212,0x7c12,0x7212,0x6c12,0x7212,0x7712,0x7012,0x2912,0x6e12,0x8112,0x2912,0x7712,0x7212,0x7c12,0x7212};\nfor (unsigned int QnoW=0, yFfuwM; QnoW < 25; QnoW++) {\n\tyFfuwM = string[QnoW];\n\tyFfuwM = (((yFfuwM & 0xffff) << 0xb) | (yFfuwM >> 0x5)) & 0xffff;\n\tyFfuwM = (((yFfuwM & 0xffff) >> 0xb) | (yFfuwM << 0x5)) & 0xffff;\n\tyFfuwM -= 0x912;\n\tyFfuwM = (((yFfuwM & 0xffff) << 0x3) | (yFfuwM >> 0xd)) & 0xffff;\n\tyFfuwM = (((yFfuwM & 0xffff) >> 0xb) | (yFfuwM << 0x5)) & 0xffff;\n\tstring[QnoW] = yFfuwM;\n}\nwprintf(string);"
+						}
+					]
+				},
+				{
+					"name": "Obfuscates text in Bash",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/obfuscate/bash?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"obfuscate",
+								"bash"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "dolor adipisicing ex nisi",
+									"description": "(Required) "
+								},
+								{
+									"key": "minOps",
+									"value": "5"
+								},
+								{
+									"key": "maxOps",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/obfuscate/bash?text=dolor adipisicing ex nisi&minOps=5&maxOps=15",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"obfuscate",
+										"bash"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "dolor adipisicing ex nisi",
+											"description": "(Required) "
+										},
+										{
+											"key": "minOps",
+											"value": "5"
+										},
+										{
+											"key": "maxOps",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "628"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Jul 2022 16:29:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "string=( 0x1c83 0x1c5f 0x1c63 0x1c5f 0x1ccb 0x1b93 0x1c97 0x1c83 0x1c77 0x1cd3 0x1c77 0x1ccf 0x1c77 0x1c8f 0x1c77 0x1c5b 0x1c7f 0x1b93 0x1c87 0x1cb3 0x1b93 0x1c5b 0x1c77 0x1ccf 0x1c77 )\nfor pRrKRtrMA in ${!string[@]}; do\n\tyaADtrcgl=${string[$pRrKRtrMA]}\n\t((yaADtrcgl = ~yaADtrcgl & 0xffff))\n\t((yaADtrcgl = ~yaADtrcgl & 0xffff))\n\t((yaADtrcgl = (((yaADtrcgl & 0xffff) << 0xe) | (yaADtrcgl >> 0x2)) & 0xffff))\n\t((yaADtrcgl += 0x35aa))\n\t((yaADtrcgl ^= 0x351))\n\t((yaADtrcgl = ~yaADtrcgl & 0xffff))\n\tstring[$pRrKRtrMA]=$yaADtrcgl\ndone\nunset pRrKRtrMA\nunset yaADtrcgl\nstring=$(printf %b \"$(printf '\\\\U%x' \"${string[@]}\")\")\necho $string"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:1337",
+			"type": "string"
+		}
+	]
+}
