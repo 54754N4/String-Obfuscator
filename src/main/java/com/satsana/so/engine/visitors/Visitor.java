@@ -1,5 +1,7 @@
 package com.satsana.so.engine.visitors;
 
+import com.satsana.so.engine.model.Context;
+import com.satsana.so.engine.model.TransformationChain;
 import com.satsana.so.engine.transforms.Add;
 import com.satsana.so.engine.transforms.MulMod;
 import com.satsana.so.engine.transforms.MulModInv;
@@ -10,8 +12,6 @@ import com.satsana.so.engine.transforms.RotateRight;
 import com.satsana.so.engine.transforms.Substract;
 import com.satsana.so.engine.transforms.Xor;
 import com.satsana.so.engine.transforms.model.Transformation;
-import com.satsana.so.model.Context;
-import com.satsana.so.model.TransformationChain;
 
 public interface Visitor<T> {
 	T initialise(Context ctx);

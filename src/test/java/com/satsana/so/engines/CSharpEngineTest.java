@@ -18,10 +18,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.satsana.so.engine.model.Context;
+import com.satsana.so.engine.model.PolymorphicEngine;
 import com.satsana.so.engine.visitors.CSharpVisitor;
 import com.satsana.so.engines.TestsUtil.ProcessOutput;
-import com.satsana.so.model.Context;
-import com.satsana.so.model.PolymorphicEngine;
 
 /* Requires .NET and Visual Studio installed (code tested on .NET v6.0) */
 @SpringBootTest

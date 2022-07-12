@@ -2,6 +2,9 @@ package com.satsana.so.services;
 
 import org.springframework.stereotype.Service;
 
+import com.satsana.so.engine.model.Context;
+import com.satsana.so.engine.model.GenerationTarget;
+import com.satsana.so.engine.model.PolymorphicEngine;
 import com.satsana.so.engine.visitors.BashVisitor;
 import com.satsana.so.engine.visitors.CSharpVisitor;
 import com.satsana.so.engine.visitors.CVisitor;
@@ -11,9 +14,6 @@ import com.satsana.so.engine.visitors.LanguageVisitor;
 import com.satsana.so.engine.visitors.Masm64Visitor;
 import com.satsana.so.engine.visitors.PowerShellVisitor;
 import com.satsana.so.engine.visitors.PythonVisitor;
-import com.satsana.so.model.Context;
-import com.satsana.so.model.GenerationTarget;
-import com.satsana.so.model.PolymorphicEngine;
 
 @Service
 public class ObfuscationServiceImpl implements ObfuscationService {

@@ -16,10 +16,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.satsana.so.engine.model.Context;
+import com.satsana.so.engine.model.PolymorphicEngine;
 import com.satsana.so.engine.visitors.PythonVisitor;
 import com.satsana.so.engines.TestsUtil.ProcessOutput;
-import com.satsana.so.model.Context;
-import com.satsana.so.model.PolymorphicEngine;
 
 /* Requires python to be installed */
 @SpringBootTest

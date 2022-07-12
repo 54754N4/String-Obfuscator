@@ -1,8 +1,16 @@
 package com.satsana.so.transformations;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+
+import org.apache.logging.log4j.util.TriConsumer;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.satsana.so.engine.transforms.MulMod;
 import com.satsana.so.engine.transforms.Not;
@@ -12,6 +20,8 @@ import com.satsana.so.engine.transforms.model.Rotation;
 import com.satsana.so.engine.transforms.model.Transformation;
 
 class TransformationsTest {
+	private Logger logger = LoggerFactory.getLogger(TransformationsTest.class);
+	
 	@Test
 	void testPermutation() {
 		Transformation perm = new Permutation(0, 3, 2, 16),
@@ -61,7 +71,47 @@ class TransformationsTest {
 		/* All pair of positive coprime numbers (m,n) (with m > n) can be arranged 
 		 * in two disjoint complete ternary trees starting from (2,1) and (3,1).
 		 * The three branches are as follow : (2m-n, m), (2m+n, m), (m+2n, n)
+		 * Ref: https://en.wikipedia.org/wiki/Coprime_integers
 		 */
-		
+		final long limit = 100;
+		BiFunction<Long, Long, Long> gcd = Transformation::gcd,
+				modInv = Transformation::modInverse;
+		TriConsumer<String, Long, Long> tester = (s, m, n) -> {
+			logger.debug(s+"{} ({}, {})", s, m, n);
+			assertTrue(m > n, m +" is not bigger than "+n);
+			assertTrue(gcd.apply(m, n) == 1);
+			assertDoesNotThrow(() -> modInv.apply(n, m));
+		};
+		TriConsumer<String,Long, Long> seededTest = (s, m, n) -> {
+			long im = m, in = n,
+				pm, pn;
+			// Branch 1
+			while (m < limit) {
+				pm = m; pn = n;
+				tester.accept(s+"Branch 1",m, n);
+				m = (pm << 1) - pn;	// 2m-n
+				n = pm;	// m
+			}
+			m = im; n = in;
+			// Branch 2
+			while (m < limit) {
+				pm = m; pn = n;
+				tester.accept(s+"Branch 1",m, n);
+				m = (pm << 1) + pn;	// 2m+n
+				n = pm;	// m
+			}
+			m = im; n = in;
+			// Branch 3
+			while (m < limit) {
+				pm = m; pn = n;
+				tester.accept(s+"Branch 1",m, n);
+				m = pm + (pn << 1); // m+2n
+				n = pn;	// n
+			}
+		};
+		// Even-odd/ood-even pairs starting with (2,1)
+		seededTest.accept("Even-odds ", 2l,1l);
+		// Odd-odd pairs starting with (3,1)
+		seededTest.accept("Odd-odds ", 3l,1l);
 	}
 }
