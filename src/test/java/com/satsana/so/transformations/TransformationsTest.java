@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 
 import org.apache.logging.log4j.util.TriConsumer;
@@ -73,14 +72,15 @@ class TransformationsTest {
 		 * The three branches are as follow : (2m-n, m), (2m+n, m), (m+2n, n)
 		 * Ref: https://en.wikipedia.org/wiki/Coprime_integers
 		 */
-		final long limit = 100;
+		final long limit = 1000;
 		BiFunction<Long, Long, Long> gcd = Transformation::gcd,
 				modInv = Transformation::modInverse;
 		TriConsumer<String, Long, Long> tester = (s, m, n) -> {
-			logger.debug(s+"{} ({}, {})", s, m, n);
+			long inv = modInv.apply(n, m);
 			assertTrue(m > n, m +" is not bigger than "+n);
 			assertTrue(gcd.apply(m, n) == 1);
-			assertDoesNotThrow(() -> modInv.apply(n, m));
+			assertDoesNotThrow(() -> inv);
+			logger.debug("{} ({}, {}) mod inv of {} [{}] = {}", s, m, n, n, m, inv);
 		};
 		TriConsumer<String,Long, Long> seededTest = (s, m, n) -> {
 			long im = m, in = n,
@@ -96,7 +96,7 @@ class TransformationsTest {
 			// Branch 2
 			while (m < limit) {
 				pm = m; pn = n;
-				tester.accept(s+"Branch 1",m, n);
+				tester.accept(s+"Branch 2",m, n);
 				m = (pm << 1) + pn;	// 2m+n
 				n = pm;	// m
 			}
@@ -104,7 +104,7 @@ class TransformationsTest {
 			// Branch 3
 			while (m < limit) {
 				pm = m; pn = n;
-				tester.accept(s+"Branch 1",m, n);
+				tester.accept(s+"Branch 3",m, n);
 				m = pm + (pn << 1); // m+2n
 				n = pn;	// n
 			}
