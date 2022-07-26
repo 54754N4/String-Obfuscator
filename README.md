@@ -1,5 +1,5 @@
 # String Obfuscator
-Obfuscates strings using a polymorphic engine. Creates a chain of transformations which are then reversed to generate the decryption routine. Each time it's ran it generates a unique routine.
+Obfuscates strings using a polymorphic engine. Creates a chain of transformations which are then reversed to generate the decryption routine. Each time its ran it generates a unique routine.
 
 ## Language Targets
 
@@ -25,14 +25,14 @@ Then generate a transformation chain and encoded data by calling the `Engine#tra
 ```java
 String stringToObfuscate = "Hello World!";
 Context ctx = engine.transform(stringToObfuscate);
-JavaVisitor visitor = new JavaVisitor();
+JavaVisitor visitor = new JavaVisitor();  // or any other target
 System.out.println(visitor.visit(ctx));
 ```
 
 ## API Endpoints Generation
 
 After running the spring boot application, each target can be accessed through the `/obfuscate/{target}` api url path, where `{target}` can be any of the following: c, cpp, csharp, java, javascript, python, masm64, bash, powershell. The Swagger UI can also be accessed using this URL `<host>:1337/swagger-ui/index.html`.
-Each endpoint takes two optional parameters to specify the range `[minOps, maxOps]`, that the polymorphic engine will use to generate transformations.
+Each endpoint takes two optional parameters to specify the range `[minOps, maxOps]` that the polymorphic engine will use to generate transformations.
 
 ## C & C++ Target Example
 ```c
