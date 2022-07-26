@@ -37,7 +37,7 @@ class PowerShellEngineTest {
 	}
 
 	@Test
-	void testPython() throws IOException, InterruptedException, ExecutionException {
+	void testPowerShell() throws IOException, InterruptedException, ExecutionException {
 		// Check valid compiler
 		assertTrue(TestsUtil.isWindows, "This test case cannot run on linux");
 		

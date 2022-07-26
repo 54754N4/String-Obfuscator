@@ -49,7 +49,8 @@ public class PowerShellVisitor extends LanguageVisitor {
 			.append(String.format(deleteFormat, array));
 		if (hasPermutation)
 			in.append(String.format(deleteFormat, temp));
-		in.append("Write-Host "+result+".ToString()");
+		in.append(String.format("%s = %s.ToString()\n", result, result))
+			.append("Write-Host "+result);
 	}
 
 	@Override

@@ -42,7 +42,7 @@ class CSharpEngineTest {
 	 * Add .\build folder as exception in Antivirus to avoid it delaying the test
 	 */
 	@Test
-	void testCsharp() throws IOException, InterruptedException, ExecutionException {
+	void testCSharp() throws IOException, InterruptedException, ExecutionException {
 		// Check C# in env path
 		ProcessOutput po = TestsUtil.run(executor, "dotnet --info");
 		assertTrue(po.getOutput().toLowerCase().startsWith(".net"));

@@ -38,7 +38,7 @@ class BashEngineTest {
 	}
 
 	@Test
-	void testPython() throws IOException, InterruptedException, ExecutionException {
+	void testBash() throws IOException, InterruptedException, ExecutionException {
 		// Check valid compiler location
 		ProcessOutput po = TestsUtil.run(executor, "bash --help");
 		assertTrue(po.getOutput().toLowerCase().startsWith("gnu bash"));

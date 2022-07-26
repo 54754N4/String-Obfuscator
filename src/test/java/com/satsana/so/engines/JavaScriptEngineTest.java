@@ -37,7 +37,7 @@ class JavaScriptEngineTest {
 	}
 
 	@Test
-	void testPython() throws IOException, InterruptedException, ExecutionException {
+	void testJavaScript() throws IOException, InterruptedException, ExecutionException {
 		// Check valid compiler location
 		ProcessOutput po = TestsUtil.run(executor, "node --help");
 		assertTrue(po.getOutput().toLowerCase().startsWith("usage:"));
