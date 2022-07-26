@@ -44,7 +44,8 @@ public class PythonVisitor extends LanguageVisitor {
 			in.append(String.format("del %s, %s, %s\n", i, variable, temp));
 		else 
 			in.append(String.format("del %s, %s\n", i, variable));
-		in.append("print(''.join("+result+"))");
+		in.append(String.format("%s = ''.join(%s)\n", result, result))
+			.append("print("+result+")");
 	}
 
 	@Override
