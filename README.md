@@ -147,7 +147,7 @@ $XKvkUzFdZ = [void]$XKvkUzFdZ
 $ONsGU = [void]$ONsGU
 $HZaRySkFpz = [void]$HZaRySkFpz
 $QCjLahqh = [void]$QCjLahqh
-$string = %string.ToString()
+$string = $string.ToString()
 Write-Host $string
 ```
 ## Bash Target Example
