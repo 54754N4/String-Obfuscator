@@ -105,7 +105,8 @@ for ehNxDDeClr in range(len(string)):
 	JvYJM -= 0x217c
 	string[ehNxDDeClr] = chr(JvYJM & 0xffff)
 del ehNxDDeClr, JvYJM, rukl
-print(''.join(string))
+string = ''.join(string)
+print(string)
 ```
 ## JavaScript Target Example
 ```js
