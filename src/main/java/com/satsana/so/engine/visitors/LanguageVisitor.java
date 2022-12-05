@@ -19,7 +19,7 @@ public abstract class LanguageVisitor implements Visitor<StringBuilder> {
 		int size = RANDOM.nextInt(NAME_MIN, NAME_MAX+1);
 		StringBuilder sb = new StringBuilder();
 		for (int i=0; i<size; i++)
-			sb.append(DEFAULT_ALPHABET.charAt(RANDOM.nextInt(DEFAULT_ALPHABET.length())));
+			sb.append(alphabet.charAt(RANDOM.nextInt(alphabet.length())));
 		return sb.toString();
 	}
 	
@@ -27,6 +27,7 @@ public abstract class LanguageVisitor implements Visitor<StringBuilder> {
 		return generateName(DEFAULT_ALPHABET);
 	}
 	
+	// Can't be made static (since gets overriden in MASM64)
 	public String hex(long l) {
 		return "0x"+Long.toHexString(l);
 	}

@@ -76,7 +76,7 @@ class JavaEngineTest {
 	public static String createTestClass(String classname, String body) {
 		return new StringBuilder()
 				.append("class "+classname+" {\n")
-				.append("\tpublic static void main(String[] args) {\n")
+				.append("\tpublic static void main(String[] args) {\n\t\t")
 				.append(body.replaceAll("\n", "\n\t\t"))
 				.append("\n\t}\n")
 				.append("}\n")

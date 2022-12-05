@@ -24,8 +24,9 @@ import com.satsana.so.engines.TestsUtil.ProcessOutput;
 /* Requires Visual Studio to be installed */
 @SpringBootTest
 class CEngineTest {
-	private static String ENV_BUILD_VARS = "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat",
-			COMPILER_DIR = "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\Hostx64\\x64";
+	private static String VS_VERSION = "14.34.31933",
+			ENV_BUILD_VARS = "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat",
+			COMPILER_DIR = "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\" + VS_VERSION + "\\bin\\Hostx64\\x64";
 	private static ExecutorService executor;
 
 	@BeforeAll
@@ -45,7 +46,7 @@ class CEngineTest {
 		assertTrue(po.getError().toLowerCase().startsWith("microsoft"));
 		
 		// Create polymorphic engine and C/C++ target generator
-		PolymorphicEngine engine = new PolymorphicEngine(5, 10, 16);
+		PolymorphicEngine engine = new PolymorphicEngine(10, 10, 16);
 		CVisitor visitor = new CVisitor();
 		String message = "Hello World!";
 		
@@ -62,7 +63,7 @@ class CEngineTest {
 			Path path = Paths.get(filename+".cpp");
 			try {
 				Files.writeString(path, generated);
-				TestsUtil.run(executor, "call \"%s\" && \"%s\\cl\" %s.cpp", ENV_BUILD_VARS, COMPILER_DIR, filename);
+				TestsUtil.run(executor, "call \"%s\" && \"%s\\cl\" \"%s.cpp\"", ENV_BUILD_VARS, COMPILER_DIR, filename);
 				po = TestsUtil.run(executor, ".\\%s.exe", filename);
 				assertEquals(message, po.getOutput(), sb.toString());
 			} finally {
@@ -78,8 +79,8 @@ class CEngineTest {
 	public static String createMainFile(String imports, String body) {
 		return new StringBuilder()
 				.append(imports).append("\n\n")
-				.append("int main(int argc, char**argv) {\n")
-				.append(body.replaceAll("\n", "\n\t\t"))
+				.append("int main(int argc, char**argv) {\n\t")
+				.append(body.replaceAll("\n", "\n\t"))
 				.append("\n\treturn 0;\n}\n")
 				.toString();
 	}

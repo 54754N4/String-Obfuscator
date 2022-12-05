@@ -38,7 +38,7 @@ class PowerShellEngineTest {
 
 	@Test
 	void testPowerShell() throws IOException, InterruptedException, ExecutionException {
-		// Check valid compiler
+		// Check valid interpreter
 		assertTrue(TestsUtil.isWindows, "This test case cannot run on linux");
 		
 		// Create polymorphic engine and PowerShell target generator

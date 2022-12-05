@@ -4,7 +4,7 @@ import org.junit.platform.suite.api.SelectPackages;
 import org.junit.platform.suite.api.Suite;
 import org.junit.platform.suite.api.SuiteDisplayName;
 
-@SelectPackages(value = { "com.satsana.so.engine" })
+@SelectPackages(value = { "com.satsana.so.engines" })
 @Suite
 @SuiteDisplayName("Language generation targets Test Suite")
 public class EnginesTestSuite {

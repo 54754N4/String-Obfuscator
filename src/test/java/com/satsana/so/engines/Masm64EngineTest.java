@@ -24,9 +24,11 @@ import com.satsana.so.engine.visitors.Masm64Visitor;
 /* Requires Visual Studio to be installed with the Windows SDK */
 @SpringBootTest
 class Masm64EngineTest {
-	private static final String ASSEMBLER = "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\Hostx64\\x64\\ml64.exe",
-		LINKER = "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\Hostx64\\x64\\link.exe",
-		LIB_PATH = "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.19041.0\\um\\x64",
+	private static final String VS_VERSION = "14.34.31933",
+		DRIVER_KIT_VERSION = "10.0.19041.0",
+		ASSEMBLER = "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\"+VS_VERSION+"\\bin\\Hostx64\\x64\\ml64.exe",
+		LINKER = "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\"+VS_VERSION+"\\bin\\Hostx64\\x64\\link.exe",
+		LIB_PATH = "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\"+DRIVER_KIT_VERSION+"\\um\\x64",
 		ASSEMBLE = "\""+ASSEMBLER+"\" /c /nologo /Zi /Fo\"build\\main.obj\" /W3 /errorReport:prompt /Ta \"build\\main.asm\"",
 		LINK = "\""+LINKER+"\" /SUBSYSTEM:CONSOLE \"build\\main.obj\" /DYNAMICBASE \"kernel32.lib\" \"user32.lib\" \"gdi32.lib\" \"winspool.lib\" \"comdlg32.lib\" \"advapi32.lib\" \"shell32.lib\" \"ole32.lib\" \"oleaut32.lib\" \"uuid.lib\" \"odbc32.lib\" \"odbccp32.lib\" "
 			+ "/DEBUG /MACHINE:X64 /ENTRY:\"main\" /MANIFEST /NXCOMPAT /OUT:\"build\\main.exe\" /INCREMENTAL "
@@ -67,7 +69,7 @@ class Masm64EngineTest {
 				Files.writeString(asm, sb.toString());
 				TestsUtil.run(executor, "\"%s\"", ASSEMBLE);
 				TestsUtil.run(executor, "\"%s\"", LINK);
-				TestsUtil.run(executor,  "\"%s\"", ".\\build\\main.exe > output.txt");
+				TestsUtil.run(executor, "\"%s\"", ".\\build\\main.exe > output.txt");
 				String output = Files.readString(Paths.get("output.txt"), StandardCharsets.UTF_16LE);
 				assertEquals(message, output, sb.toString());
 			} finally {
